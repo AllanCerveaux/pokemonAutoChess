@@ -30,3 +30,4 @@ edit/durations.json
 tests/samples/*
 lib
 /logs/*.log
+.idea
