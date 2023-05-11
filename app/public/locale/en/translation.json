@@ -1,0 +1,34 @@
+{
+  "warning": {
+    "mobile": "This game is not adapted for mobile, play it on desktop"
+  },
+  "auth": {
+    "join-lobby": "Join Lobby",
+    "join-guest": "Join as Guest",
+    "sign-out": "Sign-out"
+  },
+  "misc": {
+    "made-by-fan": "Made by 2 fans, for fans",
+    "financement": "Non profit / Open Source game",
+    "copyright": "All rights to The Pokemon Company®",
+    "privacy-policy": "Policy"
+  },
+  "lobby": {
+    "header": {
+      "collection": "Collection",
+      "booster": "Boosters",
+      "wiki": "Wiki",
+      "bot-builder":"BOT Builder",
+      "meta": "Meta"
+    },
+    "tab-menu": {
+      "title": {
+        "elo": "Elo",
+        "level": "Level",
+        "bot": "Bots",
+        "profile": "Profile",
+        "search": "Search"
+      }
+    }
+  }
+}
