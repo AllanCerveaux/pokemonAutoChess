@@ -60,9 +60,11 @@ import Booster from "./component/booster/booster"
 import { IPokemonsStatistic } from "../../../models/mongo-models/pokemons-statistic"
 import { cc } from "./utils/jsx"
 import "./lobby.css"
+import {useTranslation} from "react-i18next";
 
 export default function Lobby() {
   const dispatch = useAppDispatch()
+  const {t} = useTranslation()
 
   const client: Client = useAppSelector((state) => state.network.client)
   const room: Room<ICustomLobbyState> | undefined = useAppSelector(
@@ -259,9 +261,9 @@ export default function Lobby() {
     }
   }, [lobbyJoined, dispatch, client])
 
-  if (toAuth) {
-    return <Navigate to={"/"} />
-  }
+  // if (toAuth) {
+  //   return <Navigate to={"/"} />
+  // }
   if (toPreparation) {
     return <Navigate to="/preparation"></Navigate>
   }
@@ -306,7 +308,7 @@ export default function Lobby() {
               toggleCollection(!showCollection)
             }}
           >
-            Collection
+            {t("lobby.header.collection")}
           </button>
           <button
             className={cc("bubbly", "blue", { shimmer: numberOfBooster > 0 })}
@@ -314,7 +316,7 @@ export default function Lobby() {
               toggleBooster(!showBooster)
             }}
           >
-            Boosters
+            {t("lobby.header.booster")}
           </button>
           <button
             className="bubbly green"
@@ -322,9 +324,9 @@ export default function Lobby() {
               toggleWiki(!showWiki)
             }}
           >
-            Wiki
+            {t("lobby.header.wiki")}
           </button>
-          {user?.anonymous === false && user?.title === Title.BOT_BUILDER && 
+          {user?.anonymous === false && user?.title === Title.BOT_BUILDER &&
           <button
             disabled={user?.anonymous}
             className="bubbly green"
@@ -335,7 +337,7 @@ export default function Lobby() {
               toggleBuilder(!showBuilder)
             }}
           >
-            BOT Builder
+            {t("lobby.header.bot-builder")}
           </button>}
 
           <button
@@ -347,7 +349,7 @@ export default function Lobby() {
               toggleMeta(!showMeta)
             }}
           >
-            Meta
+            {t("lobby.header.meta")}
           </button>
           <DiscordButton />
           <DonateButton />
@@ -363,7 +365,7 @@ export default function Lobby() {
                 dispatch(logOut())
               }}
             >
-              Sign Out
+              {t("auth.sign-out")}
             </button>
           </Link>
         </nav>

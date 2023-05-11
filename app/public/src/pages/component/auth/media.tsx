@@ -2,8 +2,11 @@ import React from "react"
 import DiscordButton from "../buttons/discord-button"
 import GithubButton from "../buttons/github-button"
 import PolicyButton from "../buttons/policy-button"
+import {useTranslation} from "react-i18next";
 
 export default function Media() {
+  const {t} = useTranslation()
+
   return (
     <div className="media">
       <DiscordButton />
@@ -11,11 +14,11 @@ export default function Media() {
       <PolicyButton />
       <span>V3.3</span>
       <p>
-        Made by 2 fans, for fans
+        {t("misc.made-by-fan")}
         <br />
-        Non profit / Open Source game
+        {t("misc.financement")}
         <br />
-        All rights to The Pokemon Company®
+        {t("misc.copyright")}
       </p>
     </div>
   )

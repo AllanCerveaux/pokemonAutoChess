@@ -9,11 +9,13 @@ import { logIn, logOut } from "../../../stores/NetworkStore"
 import { FIREBASE_CONFIG } from "../../utils/utils"
 import AnonymousButton from "./anonymous-button"
 import "./login.css";
+import {useTranslation} from "react-i18next";
 
 export default function Login() {
   const dispatch = useAppDispatch()
   const uid = useAppSelector((state) => state.network.uid)
   const displayName = useAppSelector((state) => state.network.displayName)
+  const {t} = useTranslation()
 
   const uiConfig = {
     // Popup signin flow rather than Navigate flow.
@@ -65,7 +67,7 @@ export default function Login() {
         <ul className="actions">
           <li>
             <Link className="bubbly green" to={"/lobby"}>
-                Join Lobby
+              {t('auth.join-lobby')}
             </Link>
           </li>
           <li>
@@ -76,7 +78,7 @@ export default function Login() {
                 dispatch(logOut())
               }}
             >
-              Sign-out
+              {t("auth.sign-out")}
             </button>
           </li>
         </ul>

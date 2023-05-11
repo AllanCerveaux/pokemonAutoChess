@@ -9,9 +9,11 @@ import PlayerLeaderboard from "./player-leaderboard"
 import LevelLeaderboard from "./level-leaderboard"
 import "react-tabs/style/react-tabs.css"
 import "./tab-menu.css";
+import {useTranslation} from "react-i18next";
 
 export default function TabMenu() {
   const dispatch = useAppDispatch()
+  const {t} = useTranslation()
 
   const tabIndex: number = useAppSelector((state) => state.lobby.tabIndex)
 
@@ -22,11 +24,11 @@ export default function TabMenu() {
       onSelect={(i: number) => dispatch(setTabIndex(i))}
     >
       <TabList>
-        <Tab>Elo</Tab>
-        <Tab>Level</Tab>
-        <Tab>Bots</Tab>
-        <Tab>Profile</Tab>
-        <Tab>Search</Tab>
+        <Tab>{t("lobby.tab-menu.title.elo")}</Tab>
+        <Tab>{t("lobby.tab-menu.title.level")}</Tab>
+        <Tab>{t("lobby.tab-menu.title.bot")}</Tab>
+        <Tab>{t("lobby.tab-menu.title.profile")}</Tab>
+        <Tab>{t("lobby.tab-menu.title.search")}</Tab>
       </TabList>
       <TabPanel>
         <PlayerLeaderboard />

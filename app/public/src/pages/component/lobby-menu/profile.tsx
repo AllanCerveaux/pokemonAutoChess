@@ -10,9 +10,12 @@ import {
 } from "../../../stores/NetworkStore"
 import { RoleBadge } from "../RoleBadge"
 import { getAvatarSrc, getPortraitSrc } from "../../../utils"
+import {useTranslation} from "react-i18next";
 
 export default function Profile() {
   const dispatch = useAppDispatch()
+  const {t} = useTranslation()
+
   const [inputValue, setInputValue] = useState<string>("")
   const user = useAppSelector((state) => state.lobby.user)
   const pokemonCollection = useAppSelector(
@@ -37,7 +40,7 @@ export default function Profile() {
               <p>{user.name}</p>
             </div>
             <p>
-              Level {user.level} ({user.exp} / 1000)
+              {t('lobby.tab-menu.title.Level')} {user.level} ({user.exp} / 1000)
             </p>
           </div>
           <div
@@ -133,8 +136,8 @@ export default function Profile() {
           <TabPanel>
             <ul className="titles" style={{ display: "flex", flexDirection: "column", padding: 0 }}>
               {Object.keys(Title).map((k,i) => (
-                <li key={k} 
-                    style={{ 
+                <li key={k}
+                    style={{
                       padding: "0.5em",
                       listStyle: "none",
                       backgroundColor: i%2 ? '#54596b' : '#61738a'
@@ -149,8 +152,8 @@ export default function Profile() {
                   <h5 style={{ color: user.title === k ? '#ffc107' : user.titles.includes(k as Title) ? "#92cc41" : "#db5e6a" }}>
                     {TitleName[k]}
                   </h5>
-                  <p style={{ 
-                    margin: 0, 
+                  <p style={{
+                    margin: 0,
                     color: user.titles.includes(k as Title) ? '#ffffff' : '#a0a0a0'
                   }}>{TitleDescription[k]}</p>
                 </li>

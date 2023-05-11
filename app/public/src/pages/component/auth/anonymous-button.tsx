@@ -7,6 +7,7 @@ import {
   animals,
   Config
 } from "unique-names-generator"
+import {useTranslation} from "react-i18next";
 
 const customConfig: Config = {
   dictionaries: [adjectives, animals, colors],
@@ -15,6 +16,8 @@ const customConfig: Config = {
 }
 
 export default function AnonymousButton() {
+  const {t} = useTranslation()
+
   async function signIn() {
     const auth = getAuth()
     try {
@@ -42,7 +45,7 @@ export default function AnonymousButton() {
             style={{ color: "#464646", paddingLeft: "5px" }}
             className="firebaseui-idp-text"
           >
-            Join as Guest
+            {t('auth.join-guest')}
           </span>
         </button>
       </div>
