@@ -1,0 +1,11 @@
+{
+  "form": {
+    "label": {
+      "shiny": "Chasseur de Shiny",
+      "all": "Afficher tout",
+      "locked": "Afficher les verrouillés",
+      "unlockable": "Afficher les déverrouillables",
+      "unlocked": "Afficher les déverrouillés"
+    }
+  }
+}

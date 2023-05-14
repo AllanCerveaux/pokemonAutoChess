@@ -1,0 +1,31 @@
+{
+  "type": {
+    "normal": "normal",
+    "grass": "grass",
+    "fire": "fire",
+    "water": "water",
+    "electric": "electric",
+    "fighting": "fighting",
+    "psychic": "psychic",
+    "dark": "dark",
+    "steel": "steel",
+    "ground": "ground",
+    "poison": "poison",
+    "dragon": "dragon",
+    "field": "field",
+    "monster": "monster",
+    "human": "human",
+    "aquatic": "aquatic",
+    "bug": "bug",
+    "flying": "flying",
+    "flora": "flora",
+    "rock": "rock",
+    "ghost": "ghost",
+    "fairy": "fairy",
+    "ice": "ice",
+    "fossil": "fossil",
+    "sound": "sound",
+    "artificial": "artificial",
+    "baby": "baby"
+  }
+}

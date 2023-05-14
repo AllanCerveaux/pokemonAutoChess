@@ -1,0 +1,11 @@
+{
+  "form": {
+    "label": {
+      "shiny": "Shiny hunter",
+      "all": "Show all",
+      "locked": "Show locked",
+      "unlockable": "Show unlockable",
+      "unlocked": "Show Unlocked"
+    }
+  }
+}

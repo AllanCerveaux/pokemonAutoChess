@@ -1,0 +1,31 @@
+{
+  "type": {
+    "normal": "normal",
+    "grass": "herbe",
+    "fire": "feu",
+    "water": "eau",
+    "electric": "électrique",
+    "fighting": "combat",
+    "psychic": "psychique",
+    "dark": "ténèbre",
+    "steel": "acier",
+    "ground": "sol",
+    "poison": "poison",
+    "dragon": "dragon",
+    "field": "champ",
+    "monster": "monstre",
+    "human": "humain",
+    "aquatic": "aquatique",
+    "bug": "insecte",
+    "flying": "volant",
+    "flora": "flore",
+    "rock": "roche",
+    "ghost": "fantôme",
+    "fairy": "fée",
+    "ice": "glace",
+    "fossil": "fossile",
+    "sound": "son",
+    "artificial": "artificiel",
+    "baby": "bébé"
+  }
+}

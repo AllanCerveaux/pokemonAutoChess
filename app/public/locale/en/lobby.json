@@ -1,0 +1,17 @@
+{
+  "back": "Back to Lobby",
+  "header": {
+    "collection": "Collection",
+    "booster": "Boosters",
+    "wiki": "Wiki",
+    "bot-builder":"BOT Builder",
+    "meta": "Meta"
+  },
+  "title": {
+    "elo": "Elo",
+    "level": "Level",
+    "bot": "Bots",
+    "profile": "Profile",
+    "search": "Search"
+  }
+}
