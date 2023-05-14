@@ -16,7 +16,7 @@ export default function PolicyButton() {
         handlePrivacyPolicyClick()
       }}
     >
-      {t("misc.privacy-policy")}
+      {t("global.privacy-policy")}
     </button>
   )
 }

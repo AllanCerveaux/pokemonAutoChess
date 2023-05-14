@@ -14,11 +14,11 @@ export default function Media() {
       <PolicyButton />
       <span>V3.3</span>
       <p>
-        {t("misc.made-by-fan")}
+        {t("global.made-by-fan")}
         <br />
-        {t("misc.financement")}
+        {t("global.financement")}
         <br />
-        {t("misc.copyright")}
+        {t("global.copyright")}
       </p>
     </div>
   )

@@ -9,16 +9,19 @@ import SynergyIcon from "../icons/synergy-icon"
 import PokemonEmotionsModal from "./pokemon-emotions-modal"
 import UnownPanel from "./unown-panel"
 import "./pokemon-collection.css"
+import {useTranslation} from "react-i18next";
 
 export default function PokemonCollection(props: {
   toggleCollection: () => void
 }) {
+  const {t} = useTranslation()
+
   const metadata = tracker as unknown as { [key: string]: ITracker }
   const [selectedPokemon, setSelectedPokemon] = useState<Pkm | undefined>(undefined)
 
   const [filter, setFilter] = useState<string>("all")
   const [shinyOnly, setShinyOnly] = useState<boolean>(false)
-  
+
   return (
     <div id="pokemon-collection">
       <header>
@@ -28,24 +31,24 @@ export default function PokemonCollection(props: {
           }}
           className="bubbly blue"
         >
-          Back to Lobby
+          {t('lobby.back')}
         </button>
         <div className="spacer"></div>
         <label>
           <input type="checkbox" className="nes-checkbox is-dark" checked={shinyOnly === true} onChange={e => setShinyOnly(!shinyOnly)} />
-          <span>Shiny Hunter</span>
+          <span>{t('collection.form.label.shiny')}</span>
         </label>
         <button onClick={() => { setFilter("all") }} className="bubbly pink">
-          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "all"}/><span>Show all</span>
+          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "all"}/><span>{t('collection.form.label.all')}</span>
         </button>
         <button onClick={() => { setFilter("locked") }} className="bubbly red">
-          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "locked"}/><span>Show locked</span>
+          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "locked"}/><span>{t('collection.form.label.locked')}</span>
         </button>
         <button onClick={() => { setFilter("unlockable") }} className="bubbly orange">
-          <input type="checkbox" className="nes-checkbox" readOnly checked={filter === "unlockable"}/><span>Show unlockable</span>
+          <input type="checkbox" className="nes-checkbox" readOnly checked={filter === "unlockable"}/><span>{t('collection.form.label.unlockable')}</span>
         </button>
         <button onClick={() => { setFilter("unlocked") }} className="bubbly green">
-          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "unlocked"}/><span>Show unlocked</span>
+          <input type="checkbox" className="nes-checkbox is-dark" readOnly checked={filter === "unlocked"}/><span>{t('collection.form.label.unlocked')}</span>
         </button>
       </header>
       <div className="nes-container">
@@ -55,7 +58,7 @@ export default function PokemonCollection(props: {
             {(Object.keys(Synergy) as Synergy[]).map((type) => {
               return (
                 <Tab key={"title-" + type}>
-                  <SynergyIcon type={type} />                  
+                  <SynergyIcon type={type} />
                 </Tab>
               )
             })}
@@ -66,7 +69,7 @@ export default function PokemonCollection(props: {
 
           {(["all"].concat(Object.keys(Synergy)) as (Synergy | "all")[]).map(type => {
             return (
-              <TabPanel key={type}>                
+              <TabPanel key={type}>
                 <PokemonCarousel
                   type={type}
                   setPokemon={setSelectedPokemon}
